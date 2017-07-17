@@ -12,10 +12,9 @@ File Encoding         : 65001
 
 Date: 2017-07-17 12:50:57
 */
-CREATE DATABASE `mybatis-subject` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `mybatis-subject`;
 
 CREATE DATABASE `mybatis-subject` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */
+USE `mybatis-subject`;
 
 SET FOREIGN_KEY_CHECKS=0;
 
