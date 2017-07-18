@@ -2,6 +2,7 @@ package com.tangcheng.mybatis.xml.introduction.mapper;
 
 import com.tangcheng.mybatis.xml.introduction.domain.SysUserDO;
 import com.tangcheng.mybatis.xml.introduction.dto.SysRoleDTO;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -48,4 +49,15 @@ public interface SysUserDOMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(SysUserDO record);
+
+    int insertCustom(SysUserDO userDO);
+
+    int insertGeneratedKeyWithJDBC(SysUserDO userDO);
+
+    int insertGenerateWithSelectKey(SysUserDO userDO);
+
+
+    //    Parameter 'userId' not found. Available parameters are [0, 1, param1, param2]
+    List<SysRoleDTO> selectRolesByUserIdAndRoleId(@Param("userId") Long userId, @Param("enabled") Boolean enabled);
+//    List<SysRoleDTO> selectRolesByUserIdAndRoleId(@Param("param1") Long userId, @Param("param2") Boolean enabled);
 }
