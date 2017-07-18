@@ -14,8 +14,6 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by tangcheng on 7/16/2017.
  */
@@ -31,7 +29,7 @@ public class CountryMapperTest {
             Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         } catch (IOException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
         }
     }
 
@@ -39,13 +37,16 @@ public class CountryMapperTest {
     public void testSelectAll() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         try {
-            List<Country> countryList = sqlSession.selectList("selectAll");
+            List<Country> countryList = sqlSession.selectList("mapper.CountryMapper.selectAll");
+            //如果此项目中只有一个名为selectAll的方法，可以活力namespace mapper.CountryMapper.
+            // 如下所示：
+            // List<Country> countryList = sqlSession.selectList("selectAll");
             for (Country country : countryList) {
                 Long id = country.getId();
                 String name = country.getName();
                 String code = country.getCode();
                 LOGGER.info("{},{},{}", id, name, code);
-                System.out.printf("%-4d%4s%4s \n",id,name,code);
+                System.out.printf("%-4d%4s%4s \n", id, name, code);
             }
 
         } finally {
