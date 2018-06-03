@@ -28,7 +28,9 @@
     </environments>
 
     <mappers>
-        <mapper resource="mapper/SysUserDOMapper.xml"></mapper>
+        <mapper resource="mapper/SysUserDOMapper.xml"/>
+        <!--org.apache.ibatis.binding.BindingException: Type interface com.tangcheng.mybatis.xml.introduction.mapper.SysRoleDOMapper is not known to the MapperRegistry.-->
+        <mapper resource="mapper/SysRoleDOMapper.xml"/>
     </mappers>
 
 

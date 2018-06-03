@@ -1,8 +1,11 @@
 package com.tangcheng.mybatis.xml.introduction.domain;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Data
 public class SysRoleDO implements Serializable {
     /**
      *

@@ -1,6 +1,8 @@
 package com.tangcheng.mybatis.xml.introduction.mapper;
 
 import com.tangcheng.mybatis.xml.introduction.domain.SysRoleDO;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 public interface SysRoleDOMapper {
@@ -43,4 +45,6 @@ public interface SysRoleDOMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(SysRoleDO record);
+
+    int updateEnabledStatus(@Param("id") Long id, @Param("enabled") Integer enabled);
 }

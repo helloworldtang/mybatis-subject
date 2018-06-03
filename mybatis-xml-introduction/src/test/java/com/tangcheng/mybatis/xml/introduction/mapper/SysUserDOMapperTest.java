@@ -100,8 +100,9 @@ public class SysUserDOMapperTest extends BaseMapperTest {
         userDO.setEmail("123@tangcheng.com");
         userDO.setInfo("custom info");
         userDO.setIcon(new byte[]{1, 2, 3});//java.io.ByteArrayInputStream@1d371b2d(ByteArrayInputStream)
-        userDO.setCreatedTime(new Date());
-        userDO.setUpdatedTime(new Date());
+        Date now = new Date();
+        userDO.setCreatedTime(now);
+        userDO.setUpdatedTime(now);
         return userDO;
     }
 
