@@ -27,7 +27,7 @@ CREATE TABLE `sys_privilege` (
   `name` varchar(50) DEFAULT NULL COMMENT '权限名称',
   `url` varchar(200) DEFAULT NULL COMMENT '权限URL',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COMMENT='权限表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='权限表';
 
 -- ----------------------------
 -- Records of sys_privilege
@@ -50,7 +50,7 @@ CREATE TABLE `sys_role` (
   `created_time` datetime DEFAULT NULL,
   `updated_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
 
 -- ----------------------------
 -- Records of sys_role
@@ -68,7 +68,7 @@ CREATE TABLE `sys_role_privilege` (
   `privilege_id` bigint(20) NOT NULL COMMENT '权限ID',
   `created_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COMMENT='角色权限关联表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色权限关联表';
 
 -- ----------------------------
 -- Records of sys_role_privilege
@@ -93,7 +93,7 @@ CREATE TABLE `sys_user` (
   `created_time` datetime DEFAULT NULL,
   `updated_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1002 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of sys_user
@@ -111,7 +111,7 @@ CREATE TABLE `sys_user_role` (
   `role_id` bigint(20) NOT NULL COMMENT '角色ID',
   `created_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='用户角色关联表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户角色关联表';
 
 -- ----------------------------
 -- Records of sys_user_role
