@@ -4,4 +4,10 @@
     <select id="selectAll" resultType="Country">
         SELECT id,name,code FROM country
     </select>
+
+    <select id="selectCountryById" resultType="com.tangcheng.mybatis.introduction.domain.Country">
+        select id,name,code from country
+        where id=#{id}
+    </select>
+
 </mapper>
