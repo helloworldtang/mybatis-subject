@@ -5,25 +5,28 @@
 <configuration>
     <settings>
         <setting name="logImpl" value="LOG4J"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
+
     <typeAliases>
         <package name="com.tangcheng.mybatis.introduction.domain"/>
     </typeAliases>
 
     <environments default="dev">
         <environment id="dev">
-            <transactionManager type="JDBC"></transactionManager>
+            <transactionManager type="JDBC"/>
             <dataSource type="UNPOOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatis-subject"/>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis-subject?useSSL=false&amp;allowPublicKeyRetrieval=true"/>
                 <property name="username" value="root"/>
-                <property name="password" value=""/>
+                <property name="password" value="opc.tang2026"/>
             </dataSource>
         </environment>
     </environments>
 
+    <!-- 注解模式：通过 package 扫描 Mapper 接口，不需要 XML 文件 -->
     <mappers>
-        <mapper resource="mapper/CountryMapper.xml"/>
+        <package name="com.tangcheng.mybatis.introduction.mapper"/>
     </mappers>
 
 </configuration>
