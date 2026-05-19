@@ -44,10 +44,10 @@
 
 
         <!-- jdbc连接 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/mybatis-subject"
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/mybatis-subject?useSSL=false&amp;allowPublicKeyRetrieval=true"
                         userId="root"
-                        password=""/>
+                        password="opc.tang2026"/>
 
         <!-- 类型转换 -->
         <javaTypeResolver>

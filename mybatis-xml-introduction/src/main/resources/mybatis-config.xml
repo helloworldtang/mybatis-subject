@@ -19,10 +19,10 @@
         <environment id="dev">
             <transactionManager type="JDBC"></transactionManager>
             <dataSource type="UNPOOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatis-subject"/>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis-subject?useSSL=false&amp;allowPublicKeyRetrieval=true"/>
                 <property name="username" value="root"/>
-                <property name="password" value=""/>
+                <property name="password" value="opc.tang2026"/>
             </dataSource>
         </environment>
     </environments>
