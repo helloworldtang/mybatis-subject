@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangcheng.mybatis.cache.level1.mapper.UserMapper">
+
+    <select id="selectById" parameterType="java.lang.Long" resultType="com.tangcheng.mybatis.cache.level1.domain.User">
+        SELECT id, name, password, email, created_time, updated_time
+        FROM sys_user
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectByName" parameterType="java.lang.String" resultType="com.tangcheng.mybatis.cache.level1.domain.User">
+        SELECT id, name, password, email, created_time, updated_time
+        FROM sys_user
+        WHERE name = #{name}
+    </select>
+
+    <update id="updateEmail" parameterType="com.tangcheng.mybatis.cache.level1.domain.User">
+        UPDATE sys_user
+        SET email = #{email}
+        WHERE id = #{id}
+    </update>
+
+</mapper>

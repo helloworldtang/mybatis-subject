@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangcheng.mybatis.cache.level2.mapper.UserMapper">
+
+    <!--
+        开启二级缓存
+        eviction="LRU"     最近最少使用淘汰策略
+        flushInterval="60000" 60秒自动刷新
+        size="1024"         最多缓存1024个对象
+        readOnly="true"     只读模式，性能更高（返回缓存对象的引用）
+    -->
+    <cache eviction="LRU" flushInterval="60000" size="1024" readOnly="true"/>
+
+    <select id="selectById" parameterType="java.lang.Long" resultType="com.tangcheng.mybatis.cache.level2.domain.User">
+        SELECT id, name, password, email, created_time, updated_time
+        FROM sys_user
+        WHERE id = #{id}
+    </select>
+
+    <!--
+        useCache="false": 该查询的结果不进入二级缓存
+        场景：实时性要求高的查询（如库存查询、余额查询），不希望被二级缓存"截胡"
+    -->
+    <select id="selectByIdNoCache" parameterType="java.lang.Long" resultType="com.tangcheng.mybatis.cache.level2.domain.User"
+            useCache="false">
+        SELECT id, name, password, email, created_time, updated_time
+        FROM sys_user
+        WHERE id = #{id}
+    </select>
+
+    <update id="updateEmail" parameterType="com.tangcheng.mybatis.cache.level2.domain.User">
+        UPDATE sys_user
+        SET email = #{email}
+        WHERE id = #{id}
+    </update>
+
+</mapper>
